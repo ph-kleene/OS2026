@@ -1,0 +1,6 @@
+pb 0x7c00
+c
+blist
+regs
+sreg
+exit

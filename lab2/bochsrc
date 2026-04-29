@@ -1,0 +1,27 @@
+# CPU and Clock configuration
+# Set a reasonable IPS (Instructions Per Second)
+# clock sync=realtime ensures simulation time matches host time
+cpu: count=1, ips=10000000
+clock: sync=realtime, time0=local
+
+# BIOS images for Linux environment
+romimage: file="/usr/share/seabios/bios.bin"
+vgaromimage: file="/usr/share/bochs/VGABIOS-lgpl-latest"
+
+# Hard drive configuration - the code uses IDE ports 0x1F0-0x1F7
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+ata0-master: type=disk, path="/home/kleene/workspace/OS/lab2/os.img", mode=flat, cylinders=80, heads=2, spt=18
+
+boot: disk
+
+# Logging
+log: bochsout.txt
+
+# Serial port configuration - redirect to stderr so it shows in the terminal
+com1: enabled=1, mode=file, dev="/dev/stderr"
+
+# VGA configuration
+vga: extension=vbe
+
+# Use X display backend for Linux lab environment
+display_library: x

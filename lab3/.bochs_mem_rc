@@ -1,0 +1,5 @@
+c
+xp /32bx 0x7c00
+regs
+sreg
+exit
