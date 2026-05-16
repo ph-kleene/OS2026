@@ -1,0 +1,13 @@
+# Build artifacts
+*.o
+*.elf
+*.bin
+*.img
+*.lib
+
+# Bochs output
+bochsout.txt
+
+# Compiled test binaries (homework)
+homework3/q1_rwlock_test
+homework3/q2_ringbuffer_test
